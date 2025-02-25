@@ -1,6 +1,6 @@
 from GitBot import GitBot as gitbot
 
-webhook = gitbot("webhook_data.json")
+webhook = gitbot("data.json")
 
 print("Event Type:", webhook.get_event_type())
 print("User Name:", webhook.get_user_name())

@@ -1,7 +1,7 @@
 import json
 
 class GitBot:
-    def __init__(self, file_path="webhook_data.json"):
+    def __init__(self, file_path="data.json"):
         self.file_path = file_path
         self.data = self._load_data()
 
