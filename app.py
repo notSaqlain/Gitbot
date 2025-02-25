@@ -1,11 +1,14 @@
 from flask import Flask, request
+import pandas as pd
 import json
 
 app = Flask(__name__)
 
+"""
 @app.route("/")
 def api_test():
     return "TEST1"
+"""
 
 @app.route("/webhook", methods=["POST"])
 def gitlab_webhook():
@@ -13,9 +16,10 @@ def gitlab_webhook():
     print("Received webhook:", data)
     
     # Salva dati in un file JSON
-    with open("webhook_data.json", "a") as json_file:
-        json.dump(data, json_file)
-        json_file.write("\n")
+    import pandas as pd
+    df = pd.DataFrame([data])
+    df.to_json("webhook_data.json", orient="records", lines=True, mode='a')
+
     
     return "Webhook received", 200
 
