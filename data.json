@@ -2,14 +2,14 @@
     "object_kind": "issue",
     "event_type": "issue",
     "user": {
-      "name": "John Doe",
+      "name": "Saqlain",
       "username": "johndoe",
-      "email": "johndoe@example.com"
+      "email": "Saqlain.khalid@esterni.unipol.it"
     },
     "project": {
       "id": 123456,
-      "name": "MyRepo",
-      "web_url": "https://gitlab.com/myrepo"
+      "name": "test",
+      "web_url": "https://gitlab.com/test"
     },
     "object_attributes": {
       "id": 7890,
@@ -18,7 +18,7 @@
       "state": "closed",
       "created_at": "2025-02-25T15:30:00Z",
       "updated_at": "2025-02-25T16:00:00Z",
-      "url": "https://gitlab.com/myrepo/-/issues/7890"
+      "url": "https://gitlab.com/test/-/issues/7890"
     }
   }
   
