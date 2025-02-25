@@ -32,3 +32,6 @@ class GitBot:
 
     def get_issue_url(self):
         return self.data.get("object_attributes", {}).get("url", "Unknown")
+
+    def get_issue_iid(self):
+        return self.data.get("object_attributes", {}).get("iid", "Unknown")
