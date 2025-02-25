@@ -1,6 +1,5 @@
 from GitBot import GitBot
 
-# Create an instance and read the data
 webhook = GitBot("webhook_data.json")
 
 # Print values
