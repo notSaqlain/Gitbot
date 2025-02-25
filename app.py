@@ -15,8 +15,8 @@ def gitlab_webhook():
     print("Received webhook:", data)
     
     # Salva dati in un file JSON
-    df = pd.DataFrame([data])
-    df.to_json("data.json", orient="records", lines=True, mode='a')
+    dati = pd.DataFrame([data])
+    dati.to_json("data.json", orient="records", lines=True, mode='a')
 
     
     return "Webhook received", 200
