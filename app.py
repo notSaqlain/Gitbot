@@ -14,12 +14,12 @@ def gitlab_webhook():
     data = request._cached_json
     print("Received webhook:", data)
 
-    # Save data to JSON file
+    # Salva i dati in un file JSON
     with open("webhook_data.json", "a") as json_file:
         json.dump(data, json_file)
         json_file.write("\n")
 
-    # Save data to CSV file
+    # Salva i dati in un file CSV
     df = pd.DataFrame([data])
     if not os.path.isfile("webhook_data.csv"):
         df.to_csv("webhook_data.csv", mode="w", index=False) 
