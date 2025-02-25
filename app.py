@@ -1,6 +1,5 @@
 from flask import Flask, request
 import pandas as pd
-import json
 
 app = Flask(__name__)
 
@@ -16,7 +15,6 @@ def gitlab_webhook():
     print("Received webhook:", data)
     
     # Salva dati in un file JSON
-    import pandas as pd
     df = pd.DataFrame([data])
     df.to_json("webhook_data.json", orient="records", lines=True, mode='a')
 
