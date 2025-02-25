@@ -11,20 +11,20 @@ def api_test():
 
 @app.route("/webhook", methods=["POST"])
 def gitlab_webhook():
-    data = request.json  # Get webhook payload
-    print("Received webhook:", data)  # Print for debugging
+    data = request._cached_json
+    print("Received webhook:", data)
 
     # Save data to JSON file
     with open("webhook_data.json", "a") as json_file:
         json.dump(data, json_file)
-        json_file.write("\n")  # Add newline to separate entries
+        json_file.write("\n")
 
     # Save data to CSV file
-    df = pd.DataFrame([data])  # Convert dict to DataFrame
+    df = pd.DataFrame([data])
     if not os.path.isfile("webhook_data.csv"):
-        df.to_csv("webhook_data.csv", mode="w", index=False)  # Create new file
+        df.to_csv("webhook_data.csv", mode="w", index=False) 
     else:
-        df.to_csv("webhook_data.csv", mode="a", header=False, index=False)  # Append to file
+        df.to_csv("webhook_data.csv", mode="a", header=False, index=False)
 
     return "Webhook received", 200
 
